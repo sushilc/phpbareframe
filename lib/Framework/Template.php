@@ -11,10 +11,6 @@ class Template {
         $this->action = $action;
     }
     
-    public function setFile($templateName) {
-        $this->fileName = $templateName;
-    }
-    
     public function setVar($key, $value) {
         $this->$key = $value;
     }

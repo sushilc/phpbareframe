@@ -1,1 +1,1 @@
-hello
+hello <?php echo $this->username ?>
