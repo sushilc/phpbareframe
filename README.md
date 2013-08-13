@@ -4,8 +4,10 @@ phpbareframe
 Bare framework for PHP - no advanced functionality - almost zero learning curve - just install and start developing
 
 Intent:
-Checkout this frame, start writing code in a very basic MVC style structure
+Checkout this frame, start writing code in a very basic MVC style structure.
+
 Always keep the frame as light as possible. Idea is to make an extremely lightweight frame only.
+
 No intent to add any helper functionality at all.
 
 Steps:
