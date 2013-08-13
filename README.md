@@ -5,9 +5,7 @@ Bare framework for PHP - no advanced functionality - almost zero learning curve 
 
 Intent:
 Checkout this frame, start writing code in a very basic MVC style structure.
-
 Always keep the frame as light as possible. Idea is to make an extremely lightweight frame only.
-
 No intent to add any helper functionality at all.
 
 Steps:
@@ -20,7 +18,9 @@ Steps:
 3. create a virtualhost (eg. dev.local) to point to yourApp/web
 Redirect all requests to web/index.php
 Here is an example apache config:
+
 NameVirtualHost *:80
+
 <VirtualHost *:80>
   DocumentRoot /var/www/bareframe/web
   ServerName dev.local
