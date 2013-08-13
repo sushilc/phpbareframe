@@ -5,8 +5,8 @@ namespace Framework;
 class App {
 
     private static $app = null;
-    public $defaults = array();
-    public $env = array();
+    private $defaults = array();
+    private $env = array();
 
     private function __construct() {
         
@@ -29,6 +29,7 @@ class App {
                 
         // Set up environment
         include_once BASE_PATH . '/config/env.php';
+        $this->env = $env;
         if (isset($env['build']) && $env['build']) {
             error_reporting(E_ALL);
             ini_set('display_errors', true);
@@ -44,7 +45,7 @@ class App {
     }
 
     public function getAction() {
-        $actionName = Url::getActionName();
+        $actionName = $this->getActionName();
         if(empty($actionName)) {
             $actionName = $this->defaults['action'];
         }
@@ -69,4 +70,21 @@ class App {
         require_once $file;
     }
 
+    private function getActionName() {
+        $actionName = $_SERVER['REQUEST_URI'];
+        $urlArr = explode('/', $actionName);
+        
+        // Ignore leadding slash
+        $actionName = $urlArr[1];
+        
+        return $actionName;
+    }
+    
+    public function getDefaultSettings() {
+        return $this->defaults;
+    }
+    
+    public function getEnvSettings() {
+        return $this->env;
+    }
 }
