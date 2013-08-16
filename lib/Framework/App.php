@@ -19,7 +19,9 @@ class App {
         $action->execute();
         
         $template = $action->getTemplate();
-        $template->render();
+        $template->renderHeader();
+        $template->renderMain();
+        $template->renderFooter();
     }
     
     public function configure() {
